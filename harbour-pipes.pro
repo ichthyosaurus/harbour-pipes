@@ -19,6 +19,10 @@ DISTFILES += qml/harbour-pipes.qml \
     qml/pages/PipesPage.qml \
     qml/pages/WinPage.qml \
     qml/pages/Settings.qml \
+    qml/components/*.qml \
+    qml/components/*.js \
+    qml/*.js \
+    qml/images/*.png \
     rpm/harbour-pipes.changes.in \
     rpm/harbour-pipes.changes.run.in \
     rpm/harbour-pipes.spec \
