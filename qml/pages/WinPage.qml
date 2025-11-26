@@ -20,9 +20,15 @@ Dialog {
         dimensionXcpy = game.dimensionX
         titlecpy = game.dimensionX + "x" + game.dimensionY
         time = DB.getTime(game.dimensionX, game.dimensionY)
-        for (var y = 0; y < game.dimensionY; y++)
-            for (var x = 0; x < game.dimensionX; x++)
-                modelcpy.append({"data": game.pipeState.get(game.pipeAt(x, y)).data})
+
+        // var pattern = []
+        for (var y = 0; y < game.dimensionY; y++) {
+            for (var x = 0; x < game.dimensionX; x++) {
+                modelcpy.append({"data": (game.pipeState.get(game.pipeAt(x, y)).data & 15) | 16})
+                // pattern.push((game.pipeState.get(game.pipeAt(x, y)).data & 15) | 0)
+            }
+        }
+        // console.log("finished pattern:", pattern)
     }
 
     canAccept: nextDimensionX !== -1 && nextDimensionY !== -1
