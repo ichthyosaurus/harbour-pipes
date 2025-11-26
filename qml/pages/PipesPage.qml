@@ -96,7 +96,6 @@ Page {
 
             SilicaFlickable {
                 id: flick
-                clip: true
                 anchors.fill: parent
                 pressDelay: 0
                 contentWidth:  game.dimensionX * game.unitSize + (game.dimensionX - 1) * insideBorderSize
