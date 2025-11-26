@@ -2,13 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="pl-PL">
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>Pipes</source>
-        <translation>Rury</translation>
-    </message>
-</context>
-<context>
     <name>PipesPage</name>
     <message>
         <source>Zoom</source>
@@ -62,36 +55,36 @@
         <translation>Wymiar pionowy</translation>
     </message>
     <message>
-        <source>Warning: the chosen size exceeds
-the recommended maximum of 100 tiles.
-The game may work really slow.</source>
-        <translation>Uwaga: wybrany rozmiar przekracza
-zalecane 100 kafli. Gra może działać
-bardzo wolno.</translation>
-    </message>
-    <message>
-        <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Wyczyść WSZYSTKIE bazy (zapisy &amp; postęp)</translation>
-    </message>
-    <message>
-        <source>Clearing ALL Databases</source>
-        <translation>Czyszczenie WSZYSTKICH baz</translation>
-    </message>
-    <message>
-        <source>Clear only saves database</source>
-        <translation>Wyczyść tylko zapisane gry</translation>
-    </message>
-    <message>
-        <source>Clearing only saves database</source>
-        <translation>Czyszczenie tylko zapisanych gier</translation>
-    </message>
-    <message>
         <source>Reset settings</source>
         <translation>Przywróć ustawienia</translation>
     </message>
     <message>
         <source>Resetting settings</source>
         <translation>Przywracanie ustawień</translation>
+    </message>
+    <message numerus="yes">
+        <source>Warning: the selected size exceeds the recommended maximum of %n tiles. The game may become really slow.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Clear saved progress and settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clearing all databases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear saved progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clearing saved progress database</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

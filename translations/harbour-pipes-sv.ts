@@ -2,13 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sv">
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>Pipes</source>
-        <translation>Rör</translation>
-    </message>
-</context>
-<context>
     <name>PipesPage</name>
     <message>
         <source>Zoom</source>
@@ -62,36 +55,35 @@
         <translation>Vertikal dimension</translation>
     </message>
     <message>
-        <source>Warning: the chosen size exceeds
-the recommended maximum of 100 tiles.
-The game may work really slow.</source>
-        <translation>Varning! Vald storlek överskrider
-rekommenderat maximala 100 rutor.
-Spelet kan fungera väldigt långsamt.</translation>
-    </message>
-    <message>
-        <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Töm ALLA databaser (sparat &amp; förlopp)</translation>
-    </message>
-    <message>
-        <source>Clearing ALL Databases</source>
-        <translation>Tömmer ALLA databaser</translation>
-    </message>
-    <message>
-        <source>Clear only saves database</source>
-        <translation>Töm endast sparat-databaser</translation>
-    </message>
-    <message>
-        <source>Clearing only saves database</source>
-        <translation>Tömmer endast sparat-databaser</translation>
-    </message>
-    <message>
         <source>Reset settings</source>
         <translation>Återställ inställningar</translation>
     </message>
     <message>
         <source>Resetting settings</source>
         <translation>Återställer inställningar</translation>
+    </message>
+    <message numerus="yes">
+        <source>Warning: the selected size exceeds the recommended maximum of %n tiles. The game may become really slow.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Clear saved progress and settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clearing all databases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear saved progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clearing saved progress database</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
