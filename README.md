@@ -18,13 +18,6 @@ most QML code is taken from [harbour-picross].  Make sure to try them all of cou
 Click on the pipes to rotate them.
 Zoom in and out with the standard zoom gesture and drag the board around to find your pipes.
 
-### The game is getting really slow.  How to fix it?
-
-You need to reduce the grid size.  Many pipes = much computation.
-The game is not optimal (yet!), so whenever you click on a pipe
-or do any scrolling, it must recalculate and redraw everything.
-If you want to keep playing large puzzles, either have patience, or... suggest improvements!
-
 ### I love this game!
 
 Thank you!  I really appreciate all kinds of feedback.
@@ -39,7 +32,7 @@ This is because first a random solved puzzle is generated, and then scrambled ar
 
 ### I don't believe you! (aka. help me, I'm stuck!)
 
-/!\ _Spoiler alert: this section might ruin some fun, as it suggests strategies for solving the puzzle.  Many consider learning them yourself as part of the game.  My good advice: play the game first!_
+⚠ _Spoiler alert: this section might ruin some fun, as it suggests strategies for solving the puzzle.  Many consider learning them yourself as part of the game.  My good advice: play the game first!_
 
 .
 
