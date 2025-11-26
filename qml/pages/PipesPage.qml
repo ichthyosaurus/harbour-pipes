@@ -68,7 +68,7 @@ Page {
                     id: zoomProg
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: page.width/2
-                    maximumValue: 5
+                    maximumValue: game.maximumUnitSize / game.minimumUnitSize
                     minimumValue: 1
                     value: Math.floor(10 * (pinchArea.zoomTmp === -1 ? game.zoom : pinchArea.zoomTmp)) / 10
                 }
