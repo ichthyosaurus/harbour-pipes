@@ -8,8 +8,10 @@ import "DB.js" as DB
 
 ApplicationWindow {
     id: game
+
     initialPage: Component { PipesPage {} }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    allowedOrientations: Orientation.All
 
     signal gridUpdated
     signal win

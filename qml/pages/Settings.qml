@@ -4,6 +4,7 @@ import "../DB.js" as DB
 
 Page {
     id: settingsPage
+    allowedOrientations: Orientation.All
 
     RemorsePopup { id: remorseSettings }
     Column {

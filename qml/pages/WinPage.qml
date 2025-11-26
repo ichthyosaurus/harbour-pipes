@@ -5,6 +5,8 @@ import "../components"
 
 Dialog {
     id: winPage
+    allowedOrientations: Orientation.All
+
     property int dimDelta: DB.getParameter("increasingDifficulty")?1:0
     property int nextDimensionX: game.dimensionX + dimDelta
     property int nextDimensionY: game.dimensionY + dimDelta

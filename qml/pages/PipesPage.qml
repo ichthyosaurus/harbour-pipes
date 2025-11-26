@@ -5,6 +5,7 @@ import "../components"
 
 Page {
     id: page
+    allowedOrientations: Orientation.All
 
     property int insideBorderSize: 5
     property real unitSize: game.zoom * Math.min(
