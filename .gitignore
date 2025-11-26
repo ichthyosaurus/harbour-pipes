@@ -2,3 +2,5 @@
 *.qm
 *.spec.*
 *.spec
+
+icons-src/raw

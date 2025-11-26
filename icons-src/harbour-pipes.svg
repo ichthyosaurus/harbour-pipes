@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg2" width="256" height="256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs id="defs6">
+  <radialGradient id="radialGradient3414" cx="128" cy="128" r="192" gradientTransform="matrix(1.5,0,0,1.5,-92,-68)" gradientUnits="userSpaceOnUse">
+   <stop id="stop3416" stop-color="#0ff" offset=".3"/>
+   <stop id="stop3418" stop-color="#477" offset=".8"/>
+  </radialGradient>
+  <radialGradient id="radialGradient447" cx="68" cy="235" r="168" fx="100" fy="180" gradientTransform="matrix(1.5,0,0,1.5,-68,-128)" gradientUnits="userSpaceOnUse">
+   <stop id="stop1005" stop-color="#228" offset="0"/>
+   <stop id="stop1054" stop-color="#6bd" offset=".7"/>
+   <stop id="stop1007" stop-color="#abf" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path id="border" d="m0.5 128c0-63.75 63.75-127.5 127.5-127.5h123.5c2 0 4 2 4 4v247c0 2-2 4-4 4h-247c-2 0-4-2-4-4v-123.5z" fill="url(#radialGradient3414)"/>
+ <path id="path428" d="m220 224c2 0 4-2 4-4v-184c0-2-2-4-4-4h-92c-48 0-96 48-96 96v92c0 2 2 4 4 4z" fill="url(#radialGradient447)"/>
+ <path id="pipes-inactive" d="m98 124v-28h28v-28h-42c-7 0-14 7-14 14v42zm74-56h-42v28h42c7 0 14-7 14-14s-7-14-14-14zm-74 144v-28h28v-28h-28v-28h-28v28h-28v28h28v28z" fill="#ccc"/>
+ <path id="path1034" d="m186 212v-28h28v-28h-28v-28h-28v84z" fill="#0df"/>
+</svg>
