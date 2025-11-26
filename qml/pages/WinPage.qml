@@ -92,8 +92,10 @@ Dialog {
         }
     }
     onAccepted: {
+        game.completedSet = false
         game.dimensionX = nextDimensionX
         game.dimensionY = nextDimensionY
+        game.completedSet = true
         game.gridUpdated()
     }
 }

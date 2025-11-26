@@ -79,7 +79,17 @@ Page {
     }
     Component.onDestruction: {
         game.pause = false
-        game.dimensionX = sliderX.value
-        game.dimensionY = sliderY.value
+
+        if (game.dimensionX != sliderX.value
+                || game.dimensionY != sliderY.value) {
+            // Make sure to only regenerate the grid if
+            // the dimensions have changed, and only after
+            // both variables are updated.
+            game.completedSet = false
+            game.dimensionX = sliderX.value
+            game.dimensionY = sliderY.value
+            game.completedSet = true
+            game.gridUpdated()
+        }
     }
 }
