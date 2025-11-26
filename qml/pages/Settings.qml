@@ -40,42 +40,63 @@ Page {
             value: game.dimensionY
             valueText: value
         }
+
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Warning: the chosen size exceeds\nthe recommended maximum of 100 tiles.\nThe game may work really slow.")
-            color: "red"
+            width: parent.width - 2*x
+            x: Theme.horizontalPageMargin
+
+            text: qsTr("Warning: the selected size exceeds the recommended " +
+                       "maximum of %n tiles. The game may become really slow.",
+                       "", 100)
+            color: Theme.errorColor
+            wrapMode: Text.Wrap
             visible: sliderX.value * sliderY.value > 100
+
+            topPadding: Theme.paddingLarge
+            bottomPadding: Theme.paddingLarge
         }
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Clear ALL databases (saves & progress)")
-            onClicked: {
-                remorseSettings.execute(qsTr("Clearing ALL Databases"), function(){
-                    DB.destroyData()
-                    DB.initialize()
-                })
+
+        Item {
+            width: parent.width
+            height: 2 * Theme.paddingLarge
+        }
+
+        ButtonLayout {
+            preferredWidth: Theme.buttonWidthLarge
+
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Clear saved progress and settings")
+                onClicked: {
+                    remorseSettings.execute(qsTr("Clearing all databases"), function(){
+                        DB.destroyData()
+                        DB.initialize()
+                    })
+                }
+            }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Clear saved progress")
+                onClicked: {
+                    remorseSettings.execute(qsTr("Clearing saved progress database"), function(){
+                        DB.destroySaves()
+                        DB.initializeSaves()
+                    })
+                }
+            }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Reset settings")
+                onClicked: {
+                    remorseSettings.execute(qsTr("Resetting settings"), function(){
+                        DB.destroySettings()
+                        pageStack.pop()
+                    })
+                }
             }
         }
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Clear only saves database")
-            onClicked: {
-                remorseSettings.execute(qsTr("Clearing only saves database"), function(){
-                    DB.destroySaves()
-                    DB.initializeSaves()
-                })
-            }
-        }
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Reset settings")
-            onClicked: {
-                remorseSettings.execute(qsTr("Resetting settings"), function(){
-                    DB.destroySettings()
-                    pageStack.pop()
-                })
-            }
-        }
+
     }
     Component.onDestruction: {
         game.pause = false
