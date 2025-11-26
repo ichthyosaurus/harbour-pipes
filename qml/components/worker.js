@@ -153,6 +153,32 @@ function newGame(message) {
         }
     }
 
+    if (dimensionX == 3 && dimensionY == 3) {
+        // FCK NZS. If random generation accidentally produces
+        // fascist symbols, we immediately regenerate.
+        var noJustNo = [
+            [2, 12, 4, 6, 15, 9, 1, 3, 8],
+            [4, 6, 8, 3, 15, 12, 2, 9, 1]
+        ]
+
+        var check = []
+        for (var k = 0; k < model.count; ++k) {
+            // uncomment for debugging to set a forbidden pattern:
+            // model.set(k, {data: noJustNo[0][k] | 16})
+
+            check.push((model.get(k).data & 15) | 0)
+        }
+
+        check = JSON.stringify(check)
+        for (var forbidden = 0; forbidden < noJustNo.length; ++forbidden) {
+            if (check == JSON.stringify(noJustNo[forbidden])) {
+                console.log("random generation created an unusable pattern, regenerating...")
+                newGame(message)
+                return
+            }
+        }
+    }
+
     scramblePipes(message)
 
     model.sync()
