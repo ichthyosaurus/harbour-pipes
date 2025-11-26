@@ -34,6 +34,15 @@ ApplicationWindow {
     property int maxWidth: 0
     property var pipeState: ListModel {}
 
+    readonly property real unitSize: game.zoom * minimumUnitSize
+    readonly property int minimumUnitSize: Math.floor(Math.min(
+        (width  - (game.dimensionX - 1) * insideBorderSize) / game.dimensionX,
+        (height - (game.dimensionY - 1) * insideBorderSize) / game.dimensionY
+    ))
+    readonly property int maximumUnitSize: Math.min(Screen.width, Screen.height) / 2
+    readonly property int insideBorderSize: 5
+
+
     function pipeAt(x, y) {
         return y * dimensionX + x
     }

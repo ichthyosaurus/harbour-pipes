@@ -7,12 +7,6 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property int insideBorderSize: 5
-    property real unitSize: game.zoom * Math.min(
-        (width  - (game.dimensionX - 1) * insideBorderSize) / game.dimensionX,
-        (height - (game.dimensionY - 1) * insideBorderSize) / game.dimensionY
-    )
-
     RemorsePopup { id: remorseMain }
 
     // Set pinch area
@@ -92,15 +86,17 @@ Page {
             anchors.centerIn: parent
             width:  Math.min(parent.width, game.zoom * parent.height * game.dimensionX / game.dimensionY)
             height: Math.min(parent.height, game.zoom * parent.width * game.dimensionY / game.dimensionX)
+
             SilicaFlickable {
+                id: flick
                 clip: true
                 anchors.fill: parent
                 pressDelay: 0
-                id: flick
-                contentWidth:  game.dimensionX * unitSize + (game.dimensionX - 1) * insideBorderSize
-                contentHeight: game.dimensionY * unitSize + (game.dimensionY - 1) * insideBorderSize
-                VerticalScrollDecorator {}
-                HorizontalScrollDecorator {}
+                contentWidth:  game.dimensionX * game.unitSize + (game.dimensionX - 1) * insideBorderSize
+                contentHeight: game.dimensionY * game.unitSize + (game.dimensionY - 1) * insideBorderSize
+
+                VerticalScrollDecorator { flickable: flick }
+                HorizontalScrollDecorator { flickable: flick }
 
                 Column {
                     id: column
