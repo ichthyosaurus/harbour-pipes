@@ -48,10 +48,22 @@ Rectangle {
         }
     }
 
+    function tileClicked(index, state, inConnectedSet) {
     function scramblePipes() {
         for (var i = 0; i < game.dimensionY; i++)
             for (var j = 0; j < game.dimensionX; j++)
                 Source.doRotateRandom(pipeAt(j,i))
+        Source.doRotate(index, state)
+
+        if (inConnectedSet) {
+            clearConnections()
+        } else {
+            var neigh = Source.connectedNeigh(index, 0)
+
+            if (neigh.length) {
+                theGrid.checkConnections(index)
+            }
+        }
     }
 
     function buildPipes() {
@@ -77,16 +89,21 @@ Rectangle {
     }
 
     Grid {
-        id: pGrid
         anchors.fill: parent
         spacing: insideBorderSize
         columns: game.dimensionX
+
         Repeater {
             model: game.pipeState
-            Pipe {
-                connections: model.data & 15
-                inConnectedSet: model.data & 16
+            delegate: Component {
+                Pipe {}
             }
         }
+    }
+
+    Connections {
+        target: game
+
+        onTileClicked: tileClicked(index, state, inConnectedSet)
     }
 }

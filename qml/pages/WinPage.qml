@@ -51,13 +51,13 @@ Dialog {
                 height: 0.9 * Math.min(parent.height, parent.width * game.dimensionY / game.dimensionX)
                 columns: dimensionXcpy
                 spacing: 5
+
                 Repeater {
                     model: modelcpy
-                    PipeLookCnv {
+                    Pipe {
+                        enabled: false
                         width: (myFinalGrid.width - (dimensionXcpy - 1) * myFinalGrid.spacing) / dimensionXcpy
                         height: width
-                        inConnectedSet: true
-                        connections: model.data & 15
                     }
                 }
             }

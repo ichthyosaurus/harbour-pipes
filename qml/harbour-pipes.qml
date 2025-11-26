@@ -17,6 +17,7 @@ ApplicationWindow {
     signal win
     signal newGame
     signal checkConnections
+    signal tileClicked(var index, var state, var inConnectedSet)
 
     property int time: 0
 
@@ -33,6 +34,11 @@ ApplicationWindow {
     property int maxHeight: 0
     property int maxWidth: 0
     property var pipeState: ListModel {}
+
+    // Pipe grid settings
+    readonly property color tileBackgroundColor: Qt.rgba(0, 0, 0, 0.1)
+    readonly property color tileConnectedColor: Theme.highlightColor
+    readonly property color tileDisconnectedColor: Theme.primaryColor
 
     readonly property real unitSize: game.zoom * minimumUnitSize
     readonly property int minimumUnitSize: Math.floor(Math.min(

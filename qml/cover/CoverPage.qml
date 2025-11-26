@@ -25,15 +25,16 @@ CoverBackground {
             spacing: 2
             columns: game.dimensionX
             visible: grille.children.length === game.dimensionX * game.dimensionY + 1
+
             Repeater {
                 id: myRepeat
+
                 model: game.pipeState
-                PipeLookCnv {
-                    connections: model.data & 15
-                    inConnectedSet: model.data & 16
+
+                Pipe {
+                    enabled: false
                     width: (rectGrille.width - (game.dimensionX - 1) * 2) / game.dimensionX
                     height: width
-                    radius: rectGrille.radius
                 }
             }
         }

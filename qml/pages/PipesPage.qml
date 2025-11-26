@@ -108,7 +108,10 @@ Page {
                     id: column
                     width: game.zoom * theGrid.width
                     spacing: Theme.paddingLarge
-                    PipesGrid { id: theGrid }
+
+                    PipesGrid {
+                        id: theGrid
+                    }
                 }
             }
         }
