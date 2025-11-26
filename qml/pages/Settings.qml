@@ -1,3 +1,8 @@
+// This file is part of harbour-pipes.
+// SPDX-FileCopyrightText: 2025 Mirian Margiani
+// SPDX-FileCopyrightText: 2022 Arusekk
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../DB.js" as DB
@@ -25,7 +30,7 @@ Page {
             width: parent.width
             label: qsTr("Horizontal dimension")
             minimumValue: 2
-            maximumValue: 30
+            maximumValue: game.maximumDimension
             stepSize: 1
             value: game.dimensionX
             valueText: value
@@ -35,7 +40,7 @@ Page {
             width: parent.width
             label: qsTr("Vertical dimension")
             minimumValue: 2
-            maximumValue: 30
+            maximumValue: game.maximumDimension
             stepSize: 1
             value: game.dimensionY
             valueText: value
@@ -48,10 +53,10 @@ Page {
 
             text: qsTr("Warning: the selected size exceeds the recommended " +
                        "maximum of %n tiles. The game may become really slow.",
-                       "", 100)
+                       "", game.recommendedMaximumTiles)
             color: Theme.errorColor
             wrapMode: Text.Wrap
-            visible: sliderX.value * sliderY.value > 100
+            visible: sliderX.value * sliderY.value > game.recommendedMaximumTiles
 
             topPadding: Theme.paddingLarge
             bottomPadding: Theme.paddingLarge

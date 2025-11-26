@@ -24,6 +24,8 @@ ApplicationWindow {
     property bool won: false
     property bool pause: false
 
+    readonly property int maximumDimension: 50
+    readonly property int recommendedMaximumTiles: 30 * 30
     property int dimensionX: 0
     property int dimensionY: 0
     property real zoom: 1
