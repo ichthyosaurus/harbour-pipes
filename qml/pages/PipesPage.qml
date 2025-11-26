@@ -9,6 +9,12 @@ Page {
 
     RemorsePopup { id: remorseMain }
 
+    BusyIndicator {
+        anchors.centerIn: parent
+        running: game.pipeState.count === 0
+        size: BusyIndicatorSize.Large
+    }
+
     // Set pinch area
     PinchArea {
         id: pinchArea
