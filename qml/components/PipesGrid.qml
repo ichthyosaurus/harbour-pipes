@@ -8,11 +8,6 @@ Rectangle {
 
     property int connectedCount: 0
 
-    Component.onCompleted: {
-        game.newGame.connect(newGame)
-        game.checkConnections.connect(clearConnections)
-    }
-
     onConnectedCountChanged: {
         if (connectedCount === game.dimensionX * game.dimensionY)
             game.win()
@@ -104,6 +99,8 @@ Rectangle {
     Connections {
         target: game
 
+        onNewGame: newGame()
+        onCheckConnections: clearConnections()
         onTileClicked: tileClicked(index, state, inConnectedSet)
     }
 }
